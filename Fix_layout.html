@@ -1,0 +1,128 @@
+<html lang="eng">
+	<head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>Test Management</title>
+
+        <link href="bootstrap-3.3.6-dist/css/bootstrap.min.css" rel="stylesheet">
+        <link href="bootstrap-3.3.6-dist/css/bootstrap-theme.min.css" rel="stylesheet">
+        <link href="semantic/semantic.min.css" rel="stylesheet">
+        <link href="myStyles.css" rel="stylesheet">
+        
+	</head>
+    <body>
+        <!--<div class="container">-->
+            <nav class="navbar navbar-inverse navbar-default ">
+            <!--!<nav class="navbar navbar-inverse navbar-fixed-top">-->
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <div class="btn-group">
+                            <button type="button" class="btn navbar-btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+                                Projects
+                                <span class="caret"></span>
+                            </button>
+                            <!--Project List/Creation -->
+                            <ul class="dropdown-menu">
+                                <li><a href="#">LTSR 7.6 CU2</a></li>
+                                <li><a href="#">LTSR 7.9 CU2</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="#">Create Project</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div id="navbar" class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a href="#">User_Name</a </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <!--</div>-->
+            
+            <div class="ui container">
+                <!--<div class="row row-content">-->
+                <div class="ui segment">                     
+                    <!--row for fix-->
+                    <!--<div class="queue col-xs-12" >-->
+                    <h2>LC5235</h2>
+                    <div class="ui two column grid">
+                        
+                        
+                        <!--<div class="col-md-6" style="/*border:1px solid #ddd; border-radius: 10px;*/">-->
+                        <div class="column">
+                            <div class="row ui segment" style="padding:5%">
+                                <!--<div class="ui segment">-->
+                                <h3 class="ui floated header">Description</h3>
+                                <div class="ui clearing divider"></div>
+                                <p>COM port redirection intermittently fails</p>
+                                <!--<label>Description</label>-->
+                                
+                                <!--</div>-->
+                            </div>
+                            <div class="row ui segment" style="padding:5%">
+                                <h3 class="ui floated header">Environment</h3>
+                                <div class="ui clearing divider"></div>
+                                <p><!--Each environment variable should be entered with comma seperated values-->
+                                    Citrix Product: Broker 7.5 / VDA 7.6.300
+                                    <br>Hotfixes: LC4267
+                                    <br>Server OS: 2008 R2
+                                    <br>Client OS: Windows 7e
+                                    <br>ICA Client: Receiver 4.1.2.3
+                                </p>
+                            </div>
+                            <div class="row ui segment" style="padding:5%">
+                                <h3 class="ui floated header">Repro Steps</h3>
+                                <div class="ui clearing divider"></div>
+                                <p>
+                                    reproducible intermittently in the customer's environment
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="ui vertical divider">
+
+                        </div>
+
+                        <!--<div class="col-md-6" style="/*border:1px solid #ddd; border-radius: 10px; /*margin-left:5%*/">-->
+                        <div class="column">
+                            <div class="row" style="padding:5%">
+                                <label>Line Item Verification</label>
+                            </div>
+                            <div class="row" style="padding:5%">
+                                <label>Regression</label>
+                            </div>
+                            <div class="row" style="padding:5%">
+                                <label>Stress</label>
+                            </div>
+                            <div class="row" style="padding:5%">
+                                <label>WHQL</label>
+                            </div>
+                            <div class="row" style="padding:5%">
+                                <label>ReadMe</label>
+                            </div> 
+                        </div>
+                        <!--</div>-->
+                        
+                    </div>
+                </div>
+            </div>                
+        <!--</div>-->
+    </body>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
+    <script src="semantic/semantic.min.js"></script>
+    <script>
+        $('select').dropdown();
+    </script>
+    
+
+</html>
