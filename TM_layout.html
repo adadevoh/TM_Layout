@@ -6,15 +6,15 @@
 
         <title>Test Management</title>
 
-        <link href="bootstrap-3.3.6-dist/css/bootstrap.min.css" rel="stylesheet">
-        <link href="bootstrap-3.3.6-dist/css/bootstrap-theme.min.css" rel="stylesheet">
+        <link href="bootstrap-3.3.6-dist/css/bootstrap.min.css" rel="stylesheet"><!--TAKE OUT BOOT STRAP-->
+        <link href="bootstrap-3.3.6-dist/css/bootstrap-theme.min.css" rel="stylesheet"><!--TAKE OUT BOOT STRAP-->
         <link href="semantic/semantic.min.css" rel="stylesheet">
         <link href="myStyles.css" rel="stylesheet">
         
 	</head>
     <body>
         <!--<div class="container">-->
-            <nav class="navbar navbar-inverse navbar-default ">
+            <nav class="navbar navbar-inverse navbar-default "><!--********************************************************START NAV********************************************************* -->
             <!--!<nav class="navbar navbar-inverse navbar-fixed-top">-->
                 <div class="container-fluid">
                     <div class="navbar-header">
@@ -44,7 +44,7 @@
                         </ul>
                     </div>
                 </div>
-            </nav>
+            </nav><!--****************************************************************************END NAV************************************************************************ -->
             <!--</div>-->
             <!--<div class="segment">-->
             <div class="ui container">
@@ -72,14 +72,22 @@
                                             <td><a href="Fix_layout.html">LC5235</a></td><!--pull link and fix # from db, supply via node server side rendering -->
                                             <td>COM port redirection intermittently fails</td><!--FIND A WAY TO LIMIT THIS TO ONE FEW CHARACTERS, AND EXPAND WHEN USER CLICKS/HOVERS OVER IT-->
                                             <td>
-                                                <div class="ui fitted toggle checkbox"><!--Update this value from the server--><!--semantic UI-->
-                                                    <input type="checkbox" name="LIV" value="0" unchecked><!--add, checked/unchecked attribute, and set value from server.-->
-                                                    <label></label> <!-- Defaults are unchecked and 0--> <!--and "name" will be created at point of fix creation, e.g LC5235-LIV -->
+                                                <!--<div class="ui fitted toggle checkbox"><!--Update this value from the server--><!--semantic UI-->
+                                                <div>
+                                                    <!--<input type="checkbox" name="Fix#-LIV" value="0" unchecked><!--add, checked/unchecked attribute, and set value from server.-->
+                                                    <!--<label></label> <!-- Defaults are unchecked and 0--> <!--and "name" will be created at point of fix creation, e.g LC5235-LIV -->
+                                                    <select name="Fix#-LIV" class="ui dropdown"><!--semantic UI-->
+                                                        <option value="">Satus</option><!--default status pulled from server-->
+                                                        <option value="Not-Started">Not started</option>
+                                                        <option value="In-Progress">In Progress</option>
+                                                        <option value="Blocked">Blocked</option>
+                                                        <option value="Complete">Complete</option>
+                                                    </select>
                                                 </div>
                                             </td>
                                             <td>
                                                 <div>
-                                                    <select name="" class="ui dropdown"><!--semantic UI-->
+                                                    <select name="Fix#-Regression" class="ui dropdown"><!--semantic UI-->
                                                         <option value="">Satus</option><!--default status pulled from server-->
                                                         <option value="Not Started">Not started</option>
                                                         <option value="Running">Running</option>
@@ -90,7 +98,7 @@
                                             </td>
                                             <td>
                                                 <div>
-                                                    <select name="" class="ui dropdown"><!--semantic UI-->
+                                                    <select name="Fix#-Stress" class="ui dropdown"><!--semantic UI-->
                                                         <option value="">Satus</option><!--default status pulled from server-->
                                                         <option>Not started</option>
                                                         <option>Running</option>
@@ -101,13 +109,13 @@
                                             </td>
                                             <td>
                                                 <div class="ui fitted toggle checkbox">
-                                                    <input type="checkbox" name="WHQL" value="0" unchecked>
+                                                    <input type="checkbox" name="Fix#-WHQL"> <!--add, "checked"/"unchecked" from server, based on if value in db is true/false.-->
                                                     <label></label>
                                                 </div>
                                             </td>
                                             <td>
                                                 <div class="ui fitted toggle checkbox">
-                                                    <input type="checkbox">
+                                                    <input name="Fix#-ReadMe" type="checkbox">
                                                     <label></label>
                                                 </div>
                                             </td>
@@ -116,14 +124,22 @@
                                             <td><a href="http://onefix.eng.citrite.net/Fix/LC4797">LC4797</a></td>
                                             <td>3DConnexion Mouse problems - Custom button functions not passed on into VDA session</td>
                                             <td>
-                                                <div class="ui fitted toggle checkbox"><!--Update this value from the server-->
-                                                    <input type="checkbox">
-                                                    <label></label>
+                                                <!--<div class="ui fitted toggle checkbox"><!--Update this value from the server-->
+                                                <div>
+                                                    <!--<input name="Fix#-LIV" type="checkbox">
+                                                    <label></label>-->
+                                                    <select name="Fix#-LIV" class="ui dropdown"><!--semantic UI-->
+                                                        <option value="">Satus</option><!--default status pulled from server-->
+                                                        <option value="Not-Started">Not started</option>
+                                                        <option value="In-Progress">In Progress</option>
+                                                        <option value="Blocked">Blocked</option>
+                                                        <option value="Complete">Complete</option>
+                                                    </select>
                                                 </div>
                                             </td>
                                             <td>
                                                 <div >
-                                                    <select name="" class="ui dropdown"><!--semantic UI-->
+                                                    <select name="Fix#-Regression" class="ui dropdown"><!--semantic UI-->
                                                         <option value="">Satus</option><!--default status pulled from server-->
                                                         <option value="Not Started">Not started</option>
                                                         <option value="Running">Running</option>
@@ -134,7 +150,7 @@
                                             </td>
                                             <td>
                                                 <div >
-                                                    <select name="" class="ui dropdown"><!--semantic UI-->
+                                                    <select name="Fix#-Stress" class="ui dropdown"><!--semantic UI-->
                                                         <option value="">Satus</option><!--default status pulled from server-->
                                                         <option value="Not Started">Not started</option>
                                                         <option value="Running">Running</option>
@@ -145,13 +161,13 @@
                                             </td>
                                             <td>
                                                 <div class="ui fitted toggle checkbox">
-                                                    <input type="checkbox" name="WHQL" value="0" unchecked>
+                                                    <input type="checkbox" name="Fix#-WHQL" value="0" unchecked>
                                                     <label></label>
                                                 </div>
                                             </td>
                                             <td>
                                                 <div class="ui fitted toggle checkbox">
-                                                    <input type="checkbox">
+                                                    <input name="Fix#-ReadMe" type="checkbox">
                                                     <label></label>
                                                 </div>
                                             </td>
@@ -160,14 +176,22 @@
                                             <td><a href="http://onefix.eng.citrite.net/Fix/LC4300">LC4300</a></td>
                                             <td>Cannot save download file via CDM by IE</td>
                                             <td>
-                                                <div class="ui fitted toggle checkbox"><!--Update this value from the server-->
-                                                    <input type="checkbox">
-                                                    <label></label>
+                                                <!--<div class="ui fitted toggle checkbox"><!--Update this value from the server-->
+                                                <div>
+                                                    <!--<input name="Fix#-LIV" type="checkbox">
+                                                    <label></label>-->
+                                                    <select name="Fix#-LIV" class="ui dropdown"><!--semantic UI-->
+                                                        <option value="">Satus</option><!--default status pulled from server-->
+                                                        <option value="Not-Started">Not started</option>
+                                                        <option value="In-Progress">In Progress</option>
+                                                        <option value="Blocked">Blocked</option>
+                                                        <option value="Complete">Complete</option>
+                                                    </select>
                                                 </div>
                                             </td>
                                             <td>
                                                 <div >
-                                                    <select class="ui dropdown"><!--semantic UI-->
+                                                    <select name="Fix#-Regression" class="ui dropdown"><!--semantic UI-->
                                                         <option value="">Satus</option><!--default status pulled from server-->
                                                         <option value="Not Started">Not started</option>
                                                         <option value="Running">Running</option>
@@ -178,7 +202,7 @@
                                             </td>
                                             <td>
                                                 <div >
-                                                    <select class="ui dropdown"><!--semantic UI-->
+                                                    <select name="Fix#-Stress" class="ui dropdown"><!--semantic UI-->
                                                         <option value="">Satus</option><!--default status pulled from server-->
                                                         <option value="Not Started">Not started</option>
                                                         <option value="Running">Running</option>
@@ -189,13 +213,13 @@
                                             </td>
                                             <td>
                                                 <div class="ui fitted toggle checkbox">
-                                                    <input type="checkbox" name="WHQL" value="0" unchecked>
+                                                    <input type="checkbox" name="Fix#-WHQL" value="0" unchecked>
                                                     <label></label>
                                                 </div>
                                             </td>
                                             <td>
                                                 <div class="ui fitted toggle checkbox">
-                                                    <input type="checkbox">
+                                                    <input name="Fix#-ReadMe" type="checkbox">
                                                     <label></label>
                                                 </div>
                                             </td>
@@ -204,16 +228,24 @@
                                             <td><a href="http://onefix.eng.citrite.net/Fix/LC4681">LC4681</a></td>
                                             <td>After upgrade from VDA5.6.400 to VDA7.6.300, keyboard and mouse input fails for Mac clients</td>
                                             <td>
-                                                <div class="ui fitted toggle checkbox"><!--Update this value from the server-->
-                                                    <input type="checkbox">
-                                                    <label></label>
+                                                <!--<div class="ui fitted toggle checkbox"><!--Update this value from the server-->
+                                                <div>
+                                                    <!--<input name="Fix#-LIV" type="checkbox">
+                                                    <label></label>-->
+                                                    <select name="Fix#-LIV" class="ui dropdown"><!--semantic UI-->
+                                                        <option value="">Satus</option><!--default status pulled from server-->
+                                                        <option value="Not-Started">Not started</option>
+                                                        <option value="In-Progress">In Progress</option>
+                                                        <option value="Blocked">Blocked</option>
+                                                        <option value="Complete">Complete</option>
+                                                    </select>
                                                 </div>
                                             </td>
                                             <td>
                                                 <div >
-                                                    <select class="ui dropdown"><!--semantic UI-->
+                                                    <select name="Fix#-Regression" class="ui dropdown"><!--semantic UI-->
                                                         <option value="">Satus</option><!--default status pulled from server-->
-                                                        <option value="Not Started">Not started</option>
+                                                        <option value="Not-Started">Not started</option>
                                                         <option value="Running">Running</option>
                                                         <option value="Blocked">Blocked</option>
                                                         <option value="Complete">Complete</option>
@@ -222,9 +254,9 @@
                                             </td>
                                             <td>
                                                 <div >
-                                                    <select class="ui dropdown"><!--semantic UI-->
+                                                    <select name="Fix#-Stress" class="ui dropdown"><!--semantic UI-->
                                                         <option value="">Satus</option><!--default status pulled from server-->
-                                                        <option value="Not Started">Not started</option>
+                                                        <option value="Not-Started">Not started</option>
                                                         <option value="Running">Running</option>
                                                         <option value="Blocked">Blocked</option>
                                                         <option value="Complete">Complete</option>
@@ -233,44 +265,68 @@
                                             </td>
                                             <td>
                                                 <div class="ui fitted toggle checkbox">
-                                                    <input type="checkbox" name="WHQL" value="0" unchecked>
+                                                    <input name="WHQL" type="checkbox" name="WHQL" value="0" unchecked>
                                                     <label></label>
                                                 </div>
                                             </td>
                                             <td>
                                                 <div class="ui fitted toggle checkbox">
-                                                    <input type="checkbox">
+                                                    <input name="Fix#-ReadMe" type="checkbox">
                                                     <label></label>
                                                 </div>
                                             </td>
-                                        </tr>
-                                        
-                                    </tbody>
-                                    <!--<hr>
-                                    <tfoot class="full-width">
-                                        <tr>
-                                            <th>
-                                                <div class="ui buttons">
-                                                    <input type="submit" class="ui primary button" value="save">
-                                                    <div class="or"></div>
-                                                    <a data-toggle="modal" data-target="#addFixModal" href="#" class="ui negative button">Add Fix</a>
-                                                    
-                                                </div>
-                                                
-                                            </th>
-                                        </tr>
-                                    </tfoot>-->
+                                        </tr>                                        
+                                    </tbody>                                    
                                 </table>
                                 <hr>
                                 <div class="ui buttons">
                                     <input type="submit" class="ui primary button" value="save">
                                     <div class="or"></div>
-                                    <a data-toggle="modal" data-target="#addFixModal" href="#" class="ui negative button">Add Fix</a><!--create model for fix creation/addition-->
+                                    <!--<a data-toggle="modal" data-target="#addFixModal" href="#" class="ui negative button">Add Fix</a><!--create model for fix creation/addition-->
+                                    <a  class="ui negative button">Add Fix</a><!--create model for fix creation/addition-->
                                     <!--<button type="link" class="ui negative button">Add Fix</button>-->
                                 </div>
                             </form>
                         </div>
-                        <div id="addFixModal" class="modal fade" role="dialog">
+                        <!--<div class="ui dimmer page">-->
+                            <div class="ui small modal" style="position:fixed; /*top:0;right:0;left:0;bottom:0; z-index:1050;overflow-y:scroll;*/ width:620px; height:300px; ">
+                                <div class="header">Add Fix</div>
+                                <div class="content">
+                                    <form class="ui form">
+                                        
+                                        <!--<div class="inline field">-->
+                                        <div class="fields">
+
+                                        <div class="four wide field">
+                                            <label >Fix Number</label>
+                                            <input type="text" id="fixNumber" name="fixNumber" class="form-control" placeholder="Fix Number">                         
+                                        </div>
+
+                                        </div>
+
+
+                                        <div class="fields">
+
+                                            <div class="eight wide field">
+                                                <label>Description</label>
+                                                <!--<textarea></textarea>-->
+                                                <textarea rows="2" id="fixDescription" name="fixDescription" ></textarea>                                       
+                                            </div>
+
+                                            <div class="eight wide field">
+                                                <label>Environment</label>
+                                                <!--<textarea></textarea>-->
+                                                <textarea rows="2" id="fixDescription" name="fixDescription" ></textarea>                                       
+                                            </div>
+                                        </div>
+                                        <button type="submit" class="ui submit button">Submit</button>
+                                    </form>
+                                </div>
+                            </div>
+                        <!--</div>-->
+
+
+                        <!--<div id="addFixModal" class="modal fade" role="dialog">
                             <div class="modal-dialog">
                                 <div class="modal-content">
                                     <div class="modal-header">
@@ -301,7 +357,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div>-->
                         
                         
                     </div>
@@ -324,6 +380,10 @@
     <script src="semantic/semantic.min.js"></script>
     <script>
         $('select').dropdown();
+
+        $('.modal').modal('attach events','.negative.button','show');
+
+        //$('.ui.modal').modal'attach events', '.test.button', 'show');
     </script>
     
 
