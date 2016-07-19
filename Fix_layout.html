@@ -13,6 +13,7 @@
                 background-color: #FFFFFF;
                 padding:100px 0px 0px 0px;
                 /*z-index:0*/
+                /*margin: 0 0 100px; /* bottom = footer height */
             }
             .ui.menu .item img.logo {
                 margin-right: 1.5em;
@@ -26,6 +27,13 @@
             .ui.footer.segment {
                 margin: 5em 0em 0em;
                 padding: 5em 0em;
+            }
+            footer {
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                height: 100px;
+                width: 100%;
             }
         </style>
         
@@ -218,7 +226,7 @@
                                 <td>LC5235</td>
                             </tr>
                             <tr>
-                                <td><a>BUG064321</a></td>
+                                <td><a href="#">BUG064321</a></td>
                                 <td>COM Redirection fails</td>
                                 <td>Open</td>
                                 <td>Yes</td>
@@ -227,7 +235,7 @@
                                 <td>NA</td>
                             </tr>
                             <tr>
-                                <td><a>BUG065678</a></td>
+                                <td><a href="#">BUG065678</a></td>
                                 <td>Confirm repro steps for LC4321</td>
                                 <td>Closed</td>
                                 <td>No</td>
@@ -331,6 +339,8 @@
             </div>
         </div>                
         <!--</div>-->
+        <footer class="ui inverted footer segment">
+        </footer>
     </body>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>

@@ -16,6 +16,7 @@
                 background-color: #FFFFFF;
                 padding:100px 0px 0px 0px;
                 /*z-index:0*/
+                /*margin: 0 0 100px; /* bottom = footer height */
             }
             .ui.menu .item img.logo {
                 margin-right: 1.5em;
@@ -29,6 +30,13 @@
             .ui.footer.segment {
                 margin: 5em 0em 0em;
                 padding: 5em 0em;
+            }
+            footer {
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                height: 100px;
+                width: 100%;
             }
         </style>
         
@@ -299,15 +307,12 @@
                         <div class="ui small modal" id="addFixModal" > 
                             <div class="header">Add Fix</div>
                             <div class="content">
-                                <form class="ui form">
-                                    
-                                    
+                                <form method="" action="" class="ui form">
                                     <div class="fields">
                                         <div class="four wide field">
                                             <label >Fix Number</label>
                                             <input type="text" id="fixNumber" name="fixNumber" class="form-control" placeholder="Fix Number">                         
                                         </div>
-
                                     </div>
 
                                     <div class="fields">
@@ -345,6 +350,8 @@
                 </div>
             </div>                
         <!--</div>-->
+        <footer class="ui inverted footer segment">
+        </footer>
     </body>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
