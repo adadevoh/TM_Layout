@@ -198,58 +198,77 @@
                                             
                 </div>
             </div>
+
+            <!--<div>-->
             <div class="ui segment" >
-                <h2>Bugs</h2>
-                <div>
+                <div class="ui top attached tabular menu">
+                    <a class="item active" data-tab="Bugs"><h2>Bugs</h2></a>
+                    <a class="item" data-tab="TCDs"><h2>TCDs</h2></a>
+                </div>
+                <!--Bugs-->
+                <div class="ui bottom attached tab segment active" data-tab="Bugs">
+                    <div>
                     <!--read from server, if bugs exists then populate this div-->
                     <!-- should we make this a form or not? Form means allowing for all bugs to be updated at the same time -->
-                    <table class="ui table">
-                        <thead>
-                            <tr>
-                                <th>Bug ID</th>
-                                <th>Description</th>
-                                <th>Status</th>
-                                <th>Regression</th>
-                                <th>Blocking</th>
-                                <th>Severity</th>
-                                <th>Fix</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><a href="#" id="bugView">BUG061234</a></td><!--THE bugview will need either angularJS, or some additonal javascript to get the data from the server and display it in the modal according to BUG ID-->
-                                <td>LC5235 is not fixed in CU1 build 5045 </td>
-                                <td>Open</td>
-                                <td>No</td>
-                                <td>No</td>
-                                <td>S3</td>
-                                <td>LC5235</td>
-                            </tr>
-                            <tr>
-                                <td><a href="#">BUG064321</a></td>
-                                <td>COM Redirection fails</td>
-                                <td>Open</td>
-                                <td>Yes</td>
-                                <td>Yes</td>
-                                <td>S3</td>
-                                <td>NA</td>
-                            </tr>
-                            <tr>
-                                <td><a href="#">BUG065678</a></td>
-                                <td>Confirm repro steps for LC4321</td>
-                                <td>Closed</td>
-                                <td>No</td>
-                                <td>Yes</td>
-                                <td>S3</td>
-                                <td>LC4321</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    
-
+                        <table class="ui table">
+                            <thead>
+                                <tr>
+                                    <th>Bug ID</th>
+                                    <th>Description</th>
+                                    <th>Status</th>
+                                    <th>Regression</th>
+                                    <th>Blocking</th>
+                                    <th>Severity</th>
+                                    <th>Fix</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><a href="#" id="bugView">BUG061234</a></td><!--THE bugview will need either angularJS, or some additonal javascript to get the data from the server and display it in the modal according to BUG ID-->
+                                    <td>LC5235 is not fixed in CU1 build 5045 </td>
+                                    <td>Open</td>
+                                    <td>No</td>
+                                    <td>No</td>
+                                    <td>S3</td>
+                                    <td>LC5235</td>
+                                </tr>
+                                <tr>
+                                    <td><a href="#">BUG064321</a></td>
+                                    <td>COM Redirection fails</td>
+                                    <td>Open</td>
+                                    <td>Yes</td>
+                                    <td>Yes</td>
+                                    <td>S3</td>
+                                    <td>NA</td>
+                                </tr>
+                                <tr>
+                                    <td><a href="#">BUG065678</a></td>
+                                    <td>Confirm repro steps for LC4321</td>
+                                    <td>Closed</td>
+                                    <td>No</td>
+                                    <td>Yes</td>
+                                    <td>S3</td>
+                                    <td>LC4321</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="ui clearing divider"></div>
+                    <button class="ui red basic button" id="addBug"> Add Bug</button>
                 </div>
-                <div class="ui clearing divider"></div>
-                <button class="ui red basic button" id="addBug"> Add Bug</button>
+
+                <!--TCDs-->
+                <div class="ui bottom attached tab segment" data-tab="TCDs">
+                    <div>
+                        <table class="ui table">
+                        </table>
+                    </div>
+
+                    <div class="ui clearing divider"></div>
+                    <button class="ui red basic button" id="addTestCase"> Add Test Case</button>
+                </div>
+
+                
 
                 <div class="ui small modal" id="addBugModal">
                     <div class="header">New Bug Entry</div>
@@ -351,7 +370,9 @@
         $('#editFixInfoModal').modal('attach events','#editFixInfo','show');//when #editFixInfo button is sclicked, #editFixInfoModal is run
         
 
-        $('#addBugModal').modal('attach events','#addBug','show')
+        $('#addBugModal').modal('attach events','#addBug','show');
+
+        $('.menu .item').tab();
 
         //$('.ui.checkbox').checkbox();
         $('.ui.sticky')
