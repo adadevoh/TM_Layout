@@ -29,7 +29,10 @@
                 padding: 5em 0em;
             }
             footer {
-                position: absolute;
+                /*position: absolute;*/
+                /*position:fixed;  position:absolute;*/ 
+                position: fixed; 
+                right:0;
                 left: 0;
                 bottom: 0;
                 height: 100px;
@@ -40,30 +43,33 @@
 	</head>
 
     <body>
-        <nav class="ui fixed inverted menu">
-            <div class="ui container">
-                <!--On review, I realize it might not make sense adding project selection/cration to the nav bar. So I will add it on the side in a rail instead-->
-                <!--<div class="ui simple dropdown item">
-                    Project
-                    <i class="dropdown icon"></i>
-                    <div class="menu">
-                        <a class="item" href="#">LTSR 7.6 CU2</a>
-                        <a class="item" href="#">LTSR 7.9 CU2</a>
-                        <div class="divider"></div>
-                        <a class="item" href="#">Create Project</a>
+        <!--<div>-->
+        <nav class="ui large fixed inverted menu">
+                <div class="ui container">
+                    <a href="#" class="header item">
+                        <img class="logo" src="assets/images/logo.png">
+                        User Name
+                    </a>
+                    <div class="right menu">
+                        <div class="ui dropdown item">
+                            Projects
+                            <i class="dropdown icon"></i>
+                            <div class="menu">
+                                <a class="item" href="#">LTSR 7.6 CU2</a>
+                                <div class="divider"></div>
+                                <a class="item" href="#">Create Project</a>
+                                <div class="divider"></div>
+                                <a class="item" href="#">View all Projects</a>
 
+                            </div>
+                        </div>
                     </div>
-                </div>-->
-                <a href="#" class="header item">
-                    <img class="logo" src="assets/images/logo.png">
-                    User Name
-                </a>
-            </div>
-        </nav>
+                </div>
+            </nav>
             
             
         <!--<div class="ui container" style="margin">-->
-        <div class="ui container" style="margin">
+        <div class="ui container" style="margin; padding-bottom:150px">
         
             
             <div class="ui segment">
@@ -269,7 +275,7 @@
                 </div>
 
                 
-
+                <!--Add Bug Modal-->
                 <div class="ui small modal" id="addBugModal">
                     <div class="header">New Bug Entry</div>
                     <div class="content">
@@ -347,9 +353,26 @@
                                         <option value="SmartCard">Smart Card</option>
                                     </select>
                                 </div>
+                                <div class="four wide field">
+                                    <label>Found In</label>
+                                    <select class="ui fluid selection dropdown" name="foundIn">
+                                        <option value="">Release</option>
+                                        <option value="LTSR7.6CU1">LTSR 7.6 CU1</option>
+                                        <option value="LTSR7.6CU2">LTSR 7.6 CU2</option>
+                                    </select>
+                                </div>
+                                <div class="Four wide field">
+                                    <label>Fixed In</label>
+                                    <select class="ui fluid selection dropdown" name="foundIn">
+                                        <option value="">Release</option>
+                                        <option value="LTSR7.6CU1">LTSR 7.6 CU1</option>
+                                        <option value="LTSR7.6CU2">LTSR 7.6 CU2</option>
+                                    </select>
+                                </div>
                             </div>
                             <div class="ui clearing divider"></div>
-                            <input type="submit" class="ui red basic submit button" value="submit">
+                            <button type="submit" class="ui red basic submit button">Submit</button>
+                            <!--<input type="submit" class="ui red basic submit button" value="submit">-->
                         </form>
 
                     </div>
@@ -358,8 +381,9 @@
             </div>
         </div>                
         <!--</div>-->
-        <footer class="ui inverted footer segment">
+        <footer class="ui inverted footer segment" style="position: relative; ">
         </footer>
+        <!--</div>-->
     </body>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
@@ -367,6 +391,7 @@
     <script src="semantic/semantic.min.js"></script>
     <script>
         $('select').dropdown();
+        $('.dropdown').dropdown();
         $('#editFixInfoModal').modal('attach events','#editFixInfo','show');//when #editFixInfo button is sclicked, #editFixInfoModal is run
         
 

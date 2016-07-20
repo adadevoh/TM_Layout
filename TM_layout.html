@@ -32,7 +32,10 @@
                 padding: 5em 0em;
             }
             footer {
-                position: absolute;
+                /*position: absolute;*/
+                /*position:fixed;  position:absolute;*/ 
+                position:fixed; 
+                right:0;
                 left: 0;
                 bottom: 0;
                 height: 100px;
@@ -41,30 +44,32 @@
         </style>
         
 	</head>
-    <body>
-        
-            <nav class="ui fixed inverted menu">
+    <body>        
+            <nav class="ui large fixed inverted menu">
                 <div class="ui container">
-                    <!--On review, I realize it might not make sense adding project selection/cration to the nav bar. So I will add it on the side in a rail instead-->
-                    <!--<div class="ui simple dropdown item">
-                        Project
-                        <i class="dropdown icon"></i>
-                        <div class="menu">
-                            <a class="item" href="#">LTSR 7.6 CU2</a>
-                            <a class="item" href="#">LTSR 7.9 CU2</a>
-                            <div class="divider"></div>
-                            <a class="item" href="#">Create Project</a>
-
-                        </div>
-                    </div>-->
                     <a href="#" class="header item">
                         <img class="logo" src="assets/images/logo.png">
                         User Name
                     </a>
+                    <div class="right menu">
+                        <div class="ui dropdown item">
+                            Projects
+                            <i class="dropdown icon"></i>
+                            <div class="menu">
+                                <a class="item" href="#">LTSR 7.6 CU2</a>
+                                <div class="divider"></div>
+                                <a class="item" href="#">Create Project</a>
+                                <div class="divider"></div>
+                                <a class="item" href="#">View all Projects</a>
+
+                            </div>
+                        </div>
+                    </div>
                 </div>
-        </nav>
-            <div class="ui container" style="margin">
-                <div>    
+            </nav>
+
+            <div class="ui container" style="margin; padding-bottom:150px" >
+                <!--<div>-->    
                     <div class="ui segment">                 
                         <h2>Fixes</h2>
                         <div>
@@ -355,10 +360,10 @@
                             Bugs
                         </p>
                     </div>
-                </div>
+                <!--</div>-->
             </div>                
         <!--</div>-->
-        <footer class="ui inverted footer segment">
+        <footer class="ui inverted footer segment" style="position: relative; ">
         </footer>
     </body>
 
@@ -367,6 +372,7 @@
     <script src="semantic/semantic.min.js"></script>
     <script>
         $('select').dropdown();
+        $('.dropdown').dropdown();
 
         $('#addFixModal').modal('attach events','#addFix','show');//when #addfix button is sclicked, #addfixModal is run
     </script>
