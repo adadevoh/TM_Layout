@@ -309,18 +309,19 @@
                         </div>
                         <!--<div class="ui dimmer page">-->
                             <!--style="position:fixed; /*top:0;right:0;left:0;bottom:0; z-index:1050;overflow-y:scroll;*/ width:620px; height:300px; "-->
-                        <div class="ui small modal" id="addFixModal" > 
+                        <!--Add fix modal-->
+                        <div class="ui small modal" id="addFixModal"> 
                             <div class="header">Add Fix</div>
                             <div class="content">
                                 <form method="" action="" class="ui form">
                                     <div class="fields">
-                                        <div class="four wide field">
+                                        <div class="six wide field">
                                             <label >Fix Number</label>
                                             <input type="text" id="fixNumber" name="fixNumber" placeholder="Fix Number">                         
                                         </div>
-                                        <div class="eight wide field">
+                                        <div class="six wide field">
                                             <label>Description</label>
-                                            <input type="text" id="fixDescription" name="fixDescription" class="">
+                                            <input type="text" id="fixDescription" name="fixDescription" placeholder="Description">
                                             
                                             <!--<textarea rows="2" id="fixDescription" name="fixDescription" ></textarea>    -->                                   
                                         </div>
@@ -328,19 +329,83 @@
                                     </div>
 
                                     <div class="fields">
-                                        <div class="five wide field">
+                                        <div class="six wide field">
                                             <label>Environment</label>
                                             
                                             <textarea rows="2" id="fixDescription" name="fixDescription" ></textarea>                                       
                                         </div>
-                                        <div class="four wide inline field">
+                                        <div class="three wide field">
+                                            <label>WHQL</label>
+                                            <div class="field">
+                                                <div class="ui radio checkbox">
+                                                    <input type="radio" name="whql" value="yes">
+                                                    <label>Yes</label>
+                                                </div>
+                                                <div class="ui radio checkbox">
+                                                    <input type="radio" name="whql" value="no">
+                                                    <label>No</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="three wide field">
                                             <label>Create OneTest Line Item</label>
                                             <div class="ui fitted checkbox">                                                
                                                 <input type="checkbox" name="addOneTestLineItem">
                                                 <label></label>
                                             </div>
                                         </div>
+                                        <div class="four wide field">
+                                            <label>Select Project and Sprint</label>
+                                            <div class="ui floating labeled icon dropdown button">
+                                                <i class="dropdown icon"></i>
+                                                <span class="text">Projects</span>
+                                                <div class="menu">
+                                                    <div class="item"><!--should we mark a project as disabled once its completed?-->
+                                                        <i class="dropdown icon"></i>
+                                                        <span class="text">LTSR 7.6 CU1</span>
+                                                        <div class="right menu">
+                                                            <div class="item">Sprint 1</div>
+                                                            <div class="item">Sprtin 2</div>
+                                                            <div class="item">Sprint 3</div>
+                                                            <div class="divider"></div>
+                                                            <a href="#" class="disabled item">add sprint</a><!--mark add sprint as disabled once the project as been released-->
+                                                        </div>
+                                                    </div>
+                                                    <div class="item"><!--select projct then select the active sprint you want within it. Will need client side javascript (angular) for this-->
+                                                        <i class="dropdown icon"></i>
+                                                        <span class="text">LTSR 7.6 CU2</span>
+                                                        <div class="right menu">
+                                                            <div class="item">Sprint 1</div>
+                                                            <div class="item">Sprtin 2</div>
+                                                            <div class="item">Sprint 3</div>
+                                                            <div class="divider"></div>
+                                                            <a class="item">add sprint</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
+                                    <!--test field-->
+                                    <!--<div class="fields">
+                                        <div class="three wide field">
+                                            <label>Select Project and Sprint</label>
+                                            <select class="ui fluid right selection dropdown">
+                                                <option value="">Projects</option>
+                                                <option class="right menu">LTSR 7.6 CU1
+                                                    <select>
+                                                        <option>Sprint 1</option>
+                                                        <option>Sprint 2</option>
+                                                    </select>
+                                                        
+
+                                                </option>
+                                            </select>
+                                        </div>
+                                    </div>-->
+                                    <!--end test field-->
+
+
                                     <button type="submit" class="ui blue submit button">Submit</button>
                                 </form>
                             </div>
