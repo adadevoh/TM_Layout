@@ -1,136 +1,33 @@
-/*.ui.fitted.toggle.checkbox{
-
+body {
+    background-color: #FFFFFF; ;
+    padding:100px 0px 0px 0px;
+    /*z-index:0*/
+    /*margin: 0 0 100px; /* bottom = footer height */
 }
-
-.ui.checkbox input:checked ~ .box:after,
-.ui.checkbox input:checked ~ label:after {
-  content: '\e800';
+.ui.menu .item img.logo {
+    margin-right: 1.5em;
 }
-*/
-
-#select{
-    /*width: 10px;*/
+.main.container {
+    margin-top: 7em;
 }
-.queue{
-    border-left: 1px solid #ddd;
-    border-right: 1px solid #ddd;
-    border-bottom: 1px solid #ddd;
-    border-top: 1px solid #ddd;
-    padding: 10px;
-    /*border-radius: 20px;*/
-    margin-bottom: 3%;
-    margin-top: 3%;
-
+.wireframe {
+    margin-top: 2em;
 }
-
-.row-header{
-    margin:0px auto;
-    padding:0px auto;
+.ui.footer.segment {
+    margin: 5em 0em 0em;
+    padding: 5em 0em;
 }
-
-.row-content {
-    margin:0px auto;
-    padding: 50px 0px 50px 0px;
-    border-bottom: 1px ridge;
-    min-height:400px;
+.segment{
+    padding-bottom: 5px;
+    padding-top: 5px;
 }
-
-.row-footer{
-    background-color: #AfAfAf;
-    margin:0px auto;
-    padding: 20px 0px 20px 0px;
-}
-
-.jumbotron {
-    padding: 70px 30px 70px 30px;
-    margin: 0px auto;
-    background: #7986CB;
-    color: floralwhite;
-}
-
-address{
-    font-size: 80%;
-    margin:0px;
-    color: #0f0f0f;
-}
-/*.ui.fixed.menu{
-        top: 0px;
-    left: 0px;
-    right: auto;
-    bottom: auto;
-}*/
-
-
-/*------------------------------------------------------------------------------------------------- */
-
-/*
-When we use the fixed navigation bar, we should give the body of the page an upper margin of 
-50px, so that the top 50px of the page does not get hidden under the navigation bar
-*/
-body{
-    /*padding:50px 0px 0px 0px;
-    z-index:0;*/
-    /*margin: 0px;
-    padding: 0px;
-    overflow-x: hidden;
-    min-width: 320px;
-    background: #FFFFFF;
-    font-family: 'Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif;
-    font-size: 14px;
-    line-height: 1.4285em;
-    color: rgba(0, 0, 0, 0.87);*/
-}
-.tab-content {
-    border-left: 1px solid #ddd;
-    border-right: 1px solid #ddd;
-    border-bottom: 1px solid #ddd;
-    padding: 10px;
-}
-.navbar-inverse { /*for now I prefer the default of black*/
-     /*background: #303F9F;*/
-     
-}
-
-/*In addition, we would like the navigation bar to indicate the current page by highlighting the item 
-with a darker background in the navbar
-*/
-.navbar-inverse .navbar-nav > .active > a,
-.navbar-inverse .navbar-nav > .active > a:hover,
-.navbar-inverse .navbar-nav > .active > a:focus {
-    color: #fff;
-    background: #1A237E;
-}
-
-.navbar-inverse .navbar-nav > .open > a,
- .navbar-inverse .navbar-nav > .open > a:hover,
- .navbar-inverse .navbar-nav > .open > a:focus {
-    color: #fff;
-    background: #1A237E;
-}
-
-.navbar-inverse .navbar-nav .open .dropdown-menu> li> a,
-.navbar-inverse .navbar-nav .open .dropdown-menu {
-    background-color: #303F9F;
-    color:#eeeeee;
-}
-
-.navbar-inverse .navbar-nav .open .dropdown-menu> li> a:hover {
-    color:#000000;
-}
-
-.affix {/*from bootstrap wk 3 */
-    top:100px;
-}
-
-.carousel {
-    background:#1A237E;
-}
-.carousel .item {
-  height: 300px;
-}
-.item img {
-    position: absolute;
-    top: 0;
+footer {
+    /*position: absolute;*/
+    /*position:fixed;  position:absolute;*/ 
+    position: fixed; 
+    right:0;
     left: 0;
-    min-height: 300px;
+    bottom: 0;
+    height: 100px;
+    width: 100%;
 }

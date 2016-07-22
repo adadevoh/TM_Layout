@@ -354,51 +354,29 @@
                                                 <label></label>
                                             </div>
                                         </div>
-                                        <div class="four wide field">
-                                            <label>Select Project and Sprint</label>
-                                            <div class="ui floating labeled icon dropdown button">
-                                                <i class="dropdown icon"></i>
-                                                <span class="text">Projects</span>
-                                                <div class="menu">
-                                                    <div class="item"><!--should we mark a project as disabled once its completed?-->
-                                                        <i class="dropdown icon"></i>
-                                                        <span class="text">LTSR 7.6 CU1</span>
-                                                        <div class="right menu">
-                                                            <div class="item">Sprint 1</div>
-                                                            <div class="item">Sprtin 2</div>
-                                                            <div class="item">Sprint 3</div>
-                                                            <div class="divider"></div>
-                                                            <a href="#" class="disabled item">add sprint</a><!--mark add sprint as disabled once the project as been released-->
-                                                        </div>
-                                                    </div>
-                                                    <div class="item"><!--select projct then select the active sprint you want within it. Will need client side javascript (angular) for this-->
-                                                        <i class="dropdown icon"></i>
-                                                        <span class="text">LTSR 7.6 CU2</span>
-                                                        <div class="right menu">
-                                                            <div class="item">Sprint 1</div>
-                                                            <div class="item">Sprtin 2</div>
-                                                            <div class="item">Sprint 3</div>
-                                                            <div class="divider"></div>
-                                                            <a class="item">add sprint</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                        <div class="three wide field"><!--for now we'll add fix to project, and then ask the user if they want to assign it to a sprint-->
+                                            <label>Select Project</label>
+                                            <select name="project" class="ui fluid floating dropdown button">
+                                                <option value="">Projects</option><!--pull active projects from db and display here-->
+                                                <option value="LTSR-7.6-CU1">LTSR 7.6 CU1</option>
+                                                <option value="LTSR-7.6-CU2">LTSR 7.6 CU2</option>
+                                            </select>
                                         </div>
                                     </div>
                                     <!--test field-->
                                     <!--<div class="fields">
                                         <div class="three wide field">
                                             <label>Select Project and Sprint</label>
-                                            <select class="ui fluid right selection dropdown">
+                                            <select class="ui fluid floating dropdown button">
                                                 <option value="">Projects</option>
-                                                <option class="right menu">LTSR 7.6 CU1
-                                                    <select>
-                                                        <option>Sprint 1</option>
-                                                        <option>Sprint 2</option>
-                                                    </select>
-                                                        
-
+                                                <option class="item ">
+                                                    <i class="dropdown icon"></i>
+                                                    LTSR 7.6 CU1
+                                                    <div class="right menu">
+                                                        <div class="item">1</div>
+                                                        <div class="item">2</div>
+                                                        <div class="item">3</div>
+                                                    </div>
                                                 </option>
                                             </select>
                                         </div>

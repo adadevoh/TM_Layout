@@ -6,39 +6,7 @@
 
         <title>Test Management</title>
         <link href="semantic/semantic.min.css" rel="stylesheet">
-        <!--<link href="myStyles.css" rel="stylesheet">-->
-
-        <style type="text/css">
-            body {
-                background-color: #FFFFFF;
-                padding:100px 0px 0px 0px;
-                /*z-index:0*/
-                /*margin: 0 0 100px; /* bottom = footer height */
-            }
-            .ui.menu .item img.logo {
-                margin-right: 1.5em;
-            }
-            .main.container {
-                margin-top: 7em;
-            }
-            .wireframe {
-                margin-top: 2em;
-            }
-            .ui.footer.segment {
-                margin: 5em 0em 0em;
-                padding: 5em 0em;
-            }
-            footer {
-                /*position: absolute;*/
-                /*position:fixed;  position:absolute;*/ 
-                position: fixed; 
-                right:0;
-                left: 0;
-                bottom: 0;
-                height: 100px;
-                width: 100%;
-            }
-        </style>
+        <link href="myStyles.css" rel="stylesheet">
         
 	</head>
 
@@ -152,7 +120,7 @@
                     </div>
 
                     <div class="column">
-                        <!--<div class="row">-->
+                        <!--Fix Status Data-->
                         <div class="ui two column grid">
                             <div class="column">
                                 <div class="row ui segment">
@@ -199,7 +167,37 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="ui clearing divider"></div>                            
+                        <div class="ui clearing divider"></div>
+                        <!--Fix Meta data-->
+                        <div class="ui two column grid">
+                            <div class="column ui labels">
+                                <div class="row ui segment" style="padding-top:10px; padding-bottom: 10px;">
+                                    <div class="ui list">
+                                        <div class="item">
+                                            <a class="row ui large label">LTSR 7.6 CU2</a>
+                                            <!--<div class="ui clearing divider"></div>-->
+                                        </div>
+                                        <div class="item">
+                                            <a class="row ui large label">Sprint 2</a>
+                                        </div>
+                                        <div class="item">
+                                            <a class="row ui large label">Dev</a>
+                                        </div>
+                                        <div class="item">
+                                            <a class="row ui large label">Escalation</a>
+                                        </div>                                       
+                                    </div>
+                                    <!--Button triggers event to mark fix as verified in hfdb, then turn to a solid green label saying "verified"-->
+                                    <!--EDIT!!!! Change button to a mechanism to mark fix as verified, in test, skipped etc-->
+                                    <button class="ui basic right green button">Mark HFDB Verified</button>
+                                </div>
+                            </div>
+                            <div class="column">
+                                <!--comment this segment out for now-->
+                                <!--<div class="row ui segment"> 
+                                </div>-->
+                            </div>
+                        </div>
                     </div>
                                             
                 </div>
@@ -211,7 +209,7 @@
                     <a class="item active" data-tab="Bugs"><h2>Bugs</h2></a>
                     <a class="item" data-tab="TCDs"><h2>TCDs</h2></a>
                 </div>
-                <!--Bugs-->
+                <!--Bugs Table-->
                 <div class="ui bottom attached tab segment active" data-tab="Bugs">
                     <div>
                     <!--read from server, if bugs exists then populate this div-->
@@ -263,7 +261,7 @@
                     <button class="ui red basic button" id="addBug"> Add Bug</button>
                 </div>
 
-                <!--TCDs-->
+                <!--TCDs Table-->
                 <div class="ui bottom attached tab segment" data-tab="TCDs">
                     <div>
                         <table class="ui table">
@@ -377,6 +375,10 @@
 
                     </div>
                 </div>
+
+                <!--TCDs Table-->
+                <div class="ui small modal" id="addTestCaseModal">
+                </div>
                 
             </div>
         </div>                
@@ -396,6 +398,7 @@
         
 
         $('#addBugModal').modal('attach events','#addBug','show');
+        $('#addTestCaseModal').modal('attach events','#addTestCase', 'show');
 
         $('.menu .item').tab();
 
