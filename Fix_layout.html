@@ -127,7 +127,7 @@
                                     <label>
                                         <h4>Line Item Verification</h4>
                                     </label>
-                                    <a class="ui large blue label" data-tooltip="click to update" data-position="bottom right">
+                                    <a class="ui large blue label fixStatus" data-tooltip="click to update" data-position="bottom right">
                                         <div>In Progress</div>
                                     </a>
                                 </div>
@@ -148,6 +148,7 @@
                                     </a>
                                 </div>
                             </div>
+
                             <div class="column">
                                 <div class="row ui segment">
                                     <label>
@@ -167,6 +168,14 @@
                                 </div>
                             </div>
                         </div>
+                        <!--fix status update modal-->
+                        <div class="ui small modal" id="statusModal">
+                            <div class="header">Update Fix# Status</div>
+                            <div class="content">
+                                <!--form goes here-->
+                            </div>
+                        </div>
+
                         <div class="ui clearing divider"></div>
                         <!--Fix Meta data-->
                         <div class="ui two column grid">
@@ -189,7 +198,7 @@
                                     </div>
                                     <!--Button triggers event to mark fix as verified in hfdb, then turn to a solid green label saying "verified"-->
                                     <!--EDIT!!!! Change button to a mechanism to mark fix as verified, in test, skipped etc-->
-                                    <button class="ui basic right green button">Mark HFDB Verified</button>
+                                    <button class="ui basic right green button">Update HFDB Status</button>
                                 </div>
                             </div>
                             <div class="column">
@@ -399,6 +408,7 @@
 
         $('#addBugModal').modal('attach events','#addBug','show');
         $('#addTestCaseModal').modal('attach events','#addTestCase', 'show');
+        $('#statusModal').modal('attach events', '.fixStatus', 'show');
 
         $('.menu .item').tab();
 
